@@ -1,12 +1,17 @@
-export const users = [
+const initialUsers = [
   { id: 1, name: "Ada Lovelace", email: "ada@teamflow.dev" },
   { id: 2, name: "Alan Turing", email: "alan@teamflow.dev" },
 ];
 
-let nextId = users.length + 1;
+export let users = [...initialUsers];
+
+let nextId = 3;
 
 export function takeId() {
-  const id = nextId;
-  nextId += 1;
-  return id;
+  return nextId++;
+}
+
+export function resetUsers() {
+  users = [...initialUsers];
+  nextId = 3;
 }
